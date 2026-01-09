@@ -3,164 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Pulse • Today in AI</title>
+  <title>AI Pulse • Flashback Latest • 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      background: #000;
-      color: #e0f7ff;
-      font-family: 'Roboto Mono', monospace;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
+      background:#000;
+      color:#e0f7ff;
+      font-family:'Roboto Mono', monospace;
+      min-height:100vh;
+      position:relative;
+      overflow-x:hidden;
     }
-
-    /* Glowing pixel DNA background */
     .dna-bg {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.25;
-      image-rendering: pixelated; /* important for crisp pixels */
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:1;
+      opacity:0.22;
       background:
-        /* Very simplified double helix pattern with noise */
-        radial-gradient(circle at 20% 30%, #00ffff11 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, #ff00ff11 0%, transparent 40%),
-        repeating-linear-gradient(
-          135deg,
-          transparent 0,
-          transparent 4px,
-          #00ffff08 4px,
-          #00ffff08 8px
-        ),
-        repeating-linear-gradient(
-          -135deg,
-          transparent 0,
-          transparent 4px,
-          #ff00ff08 4px,
-          #ff00ff08 8px
-        );
+        radial-gradient(circle at 20% 30%, #00ffff0f 0%, transparent 45%),
+        radial-gradient(circle at 80% 70%, #ff00ff0f 0%, transparent 45%),
+        repeating-linear-gradient(135deg, transparent 0, transparent 5px, #00ffff06 5px, #00ffff06 10px),
+        repeating-linear-gradient(-135deg, transparent 0, transparent 5px, #ff00ff06 5px, #ff00ff06 10px);
+      image-rendering:pixelated;
     }
-
     .glow-particles {
-      position: fixed;
-      inset: 0;
-      z-index: 2;
-      pointer-events: none;
+      position:fixed;
+      inset:0;
+      z-index:2;
+      pointer-events:none;
     }
-
     .content {
-      position: relative;
-      z-index: 10;
-      padding: 4rem 5vw;
-      max-width: 1100px;
-      margin: 0 auto;
+      position:relative;
+      z-index:10;
+      padding:4rem 5vw;
+      max-width:1100px;
+      margin:0 auto;
     }
-
     h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(3.2rem, 8vw, 7.5rem);
-      font-weight: 700;
-      text-align: center;
-      background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      background-size: 200% auto;
-      animation: glowFlow 6s linear infinite;
-      text-shadow: 0 0 40px rgba(0,255,255,0.6);
-      margin-bottom: 1.5rem;
-      letter-spacing: -2px;
+      font-family:'Orbitron', sans-serif;
+      font-size:clamp(3.5rem,9vw,8rem);
+      text-align:center;
+      background:linear-gradient(90deg,#00ffff,#ff00ff,#00ffff);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      background-size:200% auto;
+      animation:glowFlow 7s linear infinite;
+      text-shadow:0 0 50px rgba(0,255,255,0.7);
+      margin-bottom:1rem;
     }
-
-    .subtitle {
-      text-align: center;
-      font-size: 1.4rem;
-      opacity: 0.7;
-      margin-bottom: 4rem;
-      letter-spacing: 2px;
-    }
-
+    .subtitle { text-align:center; font-size:1.4rem; opacity:0.7; margin-bottom:3.5rem; letter-spacing:1.5px; }
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-      gap: 2.2rem;
-      margin-top: 2rem;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+      gap:2rem;
     }
-
     .card {
-      background: rgba(10, 15, 30, 0.55);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(0,255,255,0.18);
-      border-radius: 16px;
-      padding: 1.8rem;
-      transition: all 0.35s ease;
-      position: relative;
-      overflow: hidden;
+      background:rgba(8,12,25,0.6);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(0,255,255,0.16);
+      border-radius:14px;
+      padding:1.6rem;
+      transition:all 0.3s ease;
+      position:relative;
+      overflow:hidden;
     }
-
     .card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(0,255,255,0.45);
-      box-shadow: 0 0 40px rgba(0,255,255,0.25);
+      transform:translateY(-6px);
+      border-color:rgba(0,255,255,0.4);
+      box-shadow:0 0 35px rgba(0,255,255,0.22);
     }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 20%, rgba(0,255,255,0.15), transparent 40%);
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.6s;
-    }
-
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    .quote {
-      font-size: 1.15rem;
-      line-height: 1.6;
-      margin: 1rem 0;
-      color: #e0ffff;
-    }
-
-    .source {
-      margin-top: 1.3rem;
-      font-size: 0.92rem;
-      opacity: 0.65;
-      text-align: right;
-    }
-
-    .news-title {
-      color: #00ffff;
-      font-size: 1.35rem;
-      margin-bottom: 0.8rem;
-    }
-
-    @keyframes glowFlow {
-      0%   { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
-    }
-
-    @media (max-width: 600px) {
-      .content { padding: 3rem 6vw; }
-      h1 { font-size: clamp(3rem, 12vw, 5.5rem); }
-    }
+    .news-title { color:#00ffff; font-size:1.3rem; margin-bottom:0.7rem; }
+    .post-title a { color:#e0ffff; text-decoration:none; }
+    .post-title a:hover { color:#00ffff; text-decoration:underline; }
+    .meta { margin-top:0.8rem; font-size:0.9rem; opacity:0.65; text-align:right; }
+    .error-card { background:rgba(100,0,0,0.3); border-color:#ff4444; }
+    @keyframes glowFlow { 0%{background-position:0% 50%;} 100%{background-position:200% 50%;} }
+    @media (max-width:600px) { .content { padding:3rem 6vw; } h1 { font-size:clamp(3rem,11vw,6rem); } }
   </style>
 </head>
 <body>
@@ -170,79 +94,125 @@
 
   <div class="content">
     <h1>AI PULSE</h1>
-    <div class="subtitle">Today's Artificial Intelligence • 09 JAN 2026</div>
+    <div class="subtitle">Today's AI + Flashback Latest • Jan 09, 2026</div>
 
     <div class="grid">
 
-      <!-- === QUOTES === -->
+      <!-- Static AI content example cards -->
       <div class="card">
-        <div class="news-title">Hot Quote #1</div>
-        <div class="quote">
-          "The 2026 singularity won't be an event — it'll be a slope that most people only notice in the rear-view mirror."
+        <div class="news-title">AI Hot Quote</div>
+        <div class="post-title" style="font-size:1.1rem;line-height:1.5;">
+          "We don't count parameters anymore — we count useful thoughts per joule."
         </div>
-        <div class="source">— Dario Amodei (paraphrased & updated vibe 2026)</div>
+        <div class="meta">— Frontier lab researcher, early 2026</div>
       </div>
 
-      <div class="card">
-        <div class="news-title">Hot Quote #2</div>
-        <div class="quote">
-          "We stopped counting parameters. Now we count useful thoughts per watt."
-        </div>
-        <div class="source">— Anonymous X researcher, Jan 2026</div>
-      </div>
-
-      <!-- === NEWS === -->
-      <div class="card">
-        <div class="news-title">Breaking Today</div>
-        <div class="quote">
-          xAI just announced Grok-4 Heavy — rumored to be first model routinely beating almost all PhDs across STEM benchmarks while using < 40% power of GPT-4 era frontier models.
-        </div>
-        <div class="source">xAI status • 09 Jan 2026</div>
-      </div>
-
-      <div class="card">
-        <div class="news-title">Quick Hits • 09 JAN 2026</div>
-        <div class="quote" style="white-space: pre-line;">
-• OpenAI o4-mini reportedly hits 94% GPQA diamond (internal leak)
-• Claude 4 rumors shifting to early April window
-• Chinese labs closing gap fastest in reasoning-per-dollar
-• First serious agent company raises at $4B+ valuation
-        </div>
+      <!-- Dynamic Flashback Latest Posts -->
+      <div class="card" id="flashback-loading">
+        <div class="news-title">Senaste från Flashback</div>
+        <div style="opacity:0.7;">Laddar senaste inläggen...</div>
       </div>
 
     </div>
   </div>
 
-  <!-- Optional: very subtle floating glowing dots -->
+  <!-- Floating glowing pixels -->
   <script>
-    const particlesContainer = document.querySelector('.glow-particles');
-
-    for(let i = 0; i < 60; i++) {
-      const p = document.createElement('div');
-      p.style.cssText = `
-        position: absolute;
-        width: ${Math.random()*3+1}px;
-        height: ${Math.random()*3+1}px;
-        background: ${Math.random()>0.5 ? '#00ffff' : '#ff00ff'};
-        border-radius: 50%;
-        left: ${Math.random()*100}%;
-        top: ${Math.random()*100}%;
-        opacity: ${Math.random()*0.4 + 0.1};
-        box-shadow: 0 0 ${Math.random()*20+10}px currentColor;
-        animation: float ${20 + Math.random()*30}s infinite linear;
-        pointer-events: none;
+    const particles = document.querySelector('.glow-particles');
+    for(let i=0;i<50;i++){
+      const p=document.createElement('div');
+      p.style.cssText=`
+        position:absolute; width:${Math.random()*3+1}px; height:${Math.random()*3+1}px;
+        background:${Math.random()>0.5?'#00ffff':'#ff00ff'}; border-radius:50%;
+        left:${Math.random()*100}%; top:${Math.random()*100}%;
+        opacity:${Math.random()*0.35+0.08};
+        box-shadow:0 0 ${Math.random()*18+8}px currentColor;
+        animation:float ${18+Math.random()*25}s infinite linear;
       `;
-      particlesContainer.appendChild(p);
+      particles.appendChild(p);
     }
+  </script>
+
+  <!-- Fetch Flashback latest posts -->
+  <script>
+    const proxy = 'https://api.allorigins.win/raw?url=';
+    const targetUrl = 'https://www.flashback.org/';
+
+    async function loadFlashback() {
+      const container = document.getElementById('flashback-loading');
+      try {
+        const res = await fetch(proxy + encodeURIComponent(targetUrl));
+        if (!res.ok) throw new Error('Fetch failed');
+        const html = await res.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        // Find forum tables - Flashback uses multiple <table class="table"> but latest are in td with "Senast"
+        const candidates = doc.querySelectorAll('td');
+        const posts = [];
+
+        candidates.forEach(td => {
+          if (td.textContent.includes('Idag') || td.textContent.includes('igår')) {
+            const row = td.closest('tr');
+            if (!row) return;
+            const cells = row.querySelectorAll('td');
+            if (cells.length < 4) return;
+
+            const forumCell = cells[0];
+            const threadCell = cells[1];
+            const lastPostCell = cells[3] || td;
+
+            const link = threadCell?.querySelector('a');
+            if (!link) return;
+
+            posts.push({
+              title: link.textContent.trim(),
+              url: 'https://www.flashback.org' + link.getAttribute('href'),
+              forum: forumCell?.querySelector('a')?.textContent.trim() || 'Forum',
+              time: lastPostCell.textContent.trim().replace(/\s+/g,' ').slice(0,20)
+            });
+          }
+        });
+
+        // Dedupe + take newest (roughly first found are recent)
+        const uniquePosts = [...new Map(posts.map(p => [p.url, p])).values()].slice(0,6);
+
+        if (uniquePosts.length === 0) throw new Error('No posts parsed');
+
+        container.innerHTML = `
+          <div class="news-title">Senaste från Flashback</div>
+          ${uniquePosts.map(p => `
+            <div style="margin:1rem 0;">
+              <div class="post-title"><a href="${p.url}" target="_blank">${p.title}</a></div>
+              <div class="meta">${p.forum} • ${p.time}</div>
+            </div>
+          `).join('')}
+          <div style="margin-top:1rem;font-size:0.85rem;opacity:0.6;text-align:center;">
+            Uppdateras vid sidomladdning • Proxy via allorigins
+          </div>
+        `;
+      } catch (err) {
+        console.error(err);
+        container.classList.add('error-card');
+        container.innerHTML = `
+          <div class="news-title">Kunde inte hämta Flashback</div>
+          <div style="opacity:0.8;">Flashback blockerar troligen eller sidan ändrades.<br>Försök ladda om eller senare.</div>
+          <div style="margin-top:1rem;font-size:0.9rem;opacity:0.6;">(Scraping är skört – de gillar inte bots)</div>
+        `;
+      }
+    }
+
+    // Run once on load
+    loadFlashback();
+
+    // Optional: refresh every 10 minutes
+    // setInterval(loadFlashback, 10*60*1000);
   </script>
 
   <style>
     @keyframes float {
-      0%   { transform: translateY(0) translateX(0); }
-      25%  { transform: translateY(-30vh) translateX(10vw); }
-      50%  { transform: translateY(-60vh) translateX(-15vw); }
-      75%  { transform: translateY(-30vh) translateX(5vw); }
-      100% { transform: translateY(100vh) translateX(0); }
+      0%,100%{transform:translateY(0) translateX(0);}
+      50%{transform:translateY(-70vh) translateX(${Math.random()*30-15}vw);}
     }
   </style>
 
