@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Pulse • Today in AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto+Mono:wght@300;400&display=swap"
+    rel="stylesheet">
 
   <style>
     * {
@@ -31,25 +34,22 @@
       pointer-events: none;
       z-index: 1;
       opacity: 0.25;
-      image-rendering: pixelated; /* important for crisp pixels */
+      image-rendering: pixelated;
+      /* important for crisp pixels */
       background:
         /* Very simplified double helix pattern with noise */
         radial-gradient(circle at 20% 30%, #00ffff11 0%, transparent 40%),
         radial-gradient(circle at 80% 70%, #ff00ff11 0%, transparent 40%),
-        repeating-linear-gradient(
-          135deg,
+        repeating-linear-gradient(135deg,
           transparent 0,
           transparent 4px,
           #00ffff08 4px,
-          #00ffff08 8px
-        ),
-        repeating-linear-gradient(
-          -135deg,
+          #00ffff08 8px),
+        repeating-linear-gradient(-135deg,
           transparent 0,
           transparent 4px,
           #ff00ff08 4px,
-          #ff00ff08 8px
-        );
+          #ff00ff08 8px);
     }
 
     .glow-particles {
@@ -78,7 +78,7 @@
       color: transparent;
       background-size: 200% auto;
       animation: glowFlow 6s linear infinite;
-      text-shadow: 0 0 40px rgba(0,255,255,0.6);
+      text-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
       margin-bottom: 1.5rem;
       letter-spacing: -2px;
     }
@@ -101,7 +101,7 @@
     .card {
       background: rgba(10, 15, 30, 0.55);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(0,255,255,0.18);
+      border: 1px solid rgba(0, 255, 255, 0.18);
       border-radius: 16px;
       padding: 1.8rem;
       transition: all 0.35s ease;
@@ -111,8 +111,8 @@
 
     .card:hover {
       transform: translateY(-8px);
-      border-color: rgba(0,255,255,0.45);
-      box-shadow: 0 0 40px rgba(0,255,255,0.25);
+      border-color: rgba(0, 255, 255, 0.45);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.25);
     }
 
     .card::before {
@@ -122,7 +122,7 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle at 30% 20%, rgba(0,255,255,0.15), transparent 40%);
+      background: radial-gradient(circle at 30% 20%, rgba(0, 255, 255, 0.15), transparent 40%);
       pointer-events: none;
       opacity: 0;
       transition: opacity 0.6s;
@@ -153,16 +153,27 @@
     }
 
     @keyframes glowFlow {
-      0%   { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      100% {
+        background-position: 200% 50%;
+      }
     }
 
     @media (max-width: 600px) {
-      .content { padding: 3rem 6vw; }
-      h1 { font-size: clamp(3rem, 12vw, 5.5rem); }
+      .content {
+        padding: 3rem 6vw;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 12vw, 5.5rem);
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="dna-bg"></div>
@@ -178,7 +189,8 @@
       <div class="card">
         <div class="news-title">Hot Quote #1</div>
         <div class="quote">
-          "The 2026 singularity won't be an event — it'll be a slope that most people only notice in the rear-view mirror."
+          "The 2026 singularity won't be an event — it'll be a slope that most people only notice in the rear-view
+          mirror."
         </div>
         <div class="source">— Dario Amodei (paraphrased & updated vibe 2026)</div>
       </div>
@@ -195,56 +207,71 @@
       <div class="card">
         <div class="news-title">Breaking Today</div>
         <div class="quote">
-          xAI just announced Grok-4 Heavy — rumored to be first model routinely beating almost all PhDs across STEM benchmarks while using < 40% power of GPT-4 era frontier models.
+          xAI just announced Grok-4 Heavy — rumored to be first model routinely beating almost all PhDs across STEM
+          benchmarks while using < 40% power of GPT-4 era frontier models. </div>
+            <div class="source">xAI status • 09 Jan 2026</div>
         </div>
-        <div class="source">xAI status • 09 Jan 2026</div>
-      </div>
 
-      <div class="card">
-        <div class="news-title">Quick Hits • 09 JAN 2026</div>
-        <div class="quote" style="white-space: pre-line;">
-• OpenAI o4-mini reportedly hits 94% GPQA diamond (internal leak)
-• Claude 4 rumors shifting to early April window
-• Chinese labs closing gap fastest in reasoning-per-dollar
-• First serious agent company raises at $4B+ valuation
+        <div class="card">
+          <div class="news-title">Quick Hits • 09 JAN 2026</div>
+          <div class="quote" style="white-space: pre-line;">
+            • OpenAI o4-mini reportedly hits 94% GPQA diamond (internal leak)
+            • Claude 4 rumors shifting to early April window
+            • Chinese labs closing gap fastest in reasoning-per-dollar
+            • First serious agent company raises at $4B+ valuation
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
 
-  <!-- Optional: very subtle floating glowing dots -->
-  <script>
-    const particlesContainer = document.querySelector('.glow-particles');
+    <!-- Optional: very subtle floating glowing dots -->
+    <script>
+      const particlesContainer = document.querySelector('.glow-particles');
 
-    for(let i = 0; i < 60; i++) {
-      const p = document.createElement('div');
-      p.style.cssText = `
+      for (let i = 0; i < 60; i++) {
+        const p = document.createElement('div');
+        p.style.cssText = `
         position: absolute;
-        width: ${Math.random()*3+1}px;
-        height: ${Math.random()*3+1}px;
-        background: ${Math.random()>0.5 ? '#00ffff' : '#ff00ff'};
+        width: ${Math.random() * 3 + 1}px;
+        height: ${Math.random() * 3 + 1}px;
+        background: ${Math.random() > 0.5 ? '#00ffff' : '#ff00ff'};
         border-radius: 50%;
-        left: ${Math.random()*100}%;
-        top: ${Math.random()*100}%;
-        opacity: ${Math.random()*0.4 + 0.1};
-        box-shadow: 0 0 ${Math.random()*20+10}px currentColor;
-        animation: float ${20 + Math.random()*30}s infinite linear;
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * 100}%;
+        opacity: ${Math.random() * 0.4 + 0.1};
+        box-shadow: 0 0 ${Math.random() * 20 + 10}px currentColor;
+        animation: float ${20 + Math.random() * 30}s infinite linear;
         pointer-events: none;
       `;
-      particlesContainer.appendChild(p);
-    }
-  </script>
+        particlesContainer.appendChild(p);
+      }
+    </script>
 
-  <style>
-    @keyframes float {
-      0%   { transform: translateY(0) translateX(0); }
-      25%  { transform: translateY(-30vh) translateX(10vw); }
-      50%  { transform: translateY(-60vh) translateX(-15vw); }
-      75%  { transform: translateY(-30vh) translateX(5vw); }
-      100% { transform: translateY(100vh) translateX(0); }
-    }
-  </style>
+    <style>
+      @keyframes float {
+        0% {
+          transform: translateY(0) translateX(0);
+        }
+
+        25% {
+          transform: translateY(-30vh) translateX(10vw);
+        }
+
+        50% {
+          transform: translateY(-60vh) translateX(-15vw);
+        }
+
+        75% {
+          transform: translateY(-30vh) translateX(5vw);
+        }
+
+        100% {
+          transform: translateY(100vh) translateX(0);
+        }
+      }
+    </style>
 
 </body>
+
 </html>
